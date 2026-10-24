@@ -121,25 +121,25 @@ export const Navbar: FC = () => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 pointer-events-none ${
-          isScrolled ? 'pt-2.5 sm:pt-3' : 'pt-3 sm:pt-5'
+          isScrolled ? 'pt-2 sm:pt-3' : 'pt-2.5 sm:pt-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
           
-          {/* Floating 3D Frosted Glass Island */}
+          {/* Floating High-Contrast Island (Crisp & clearly visible on mobile) */}
           <div
             ref={islandRef}
-            className={`pointer-events-auto relative rounded-2xl sm:rounded-3xl transition-all duration-300 flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3 ${
+            className={`pointer-events-auto relative rounded-2xl sm:rounded-3xl transition-all duration-300 flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 ${
               isScrolled
-                ? 'bg-[#FDFBF7]/92 backdrop-blur-2xl border border-white/90 shadow-[0_16px_38px_-6px_rgba(31,36,33,0.14),0_6px_18px_rgba(243,108,33,0.10),inset_0_1px_1px_rgba(255,255,255,0.95)]'
-                : 'bg-[#FDFBF7]/80 backdrop-blur-xl border border-white/70 shadow-[0_10px_28px_-6px_rgba(31,36,33,0.08),0_2px_12px_rgba(243,108,33,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)]'
+                ? 'bg-white/98 sm:bg-[#FDFBF7]/92 backdrop-blur-2xl border border-stone-300/85 sm:border-white/90 shadow-[0_14px_38px_rgba(31,36,33,0.16),0_4px_14px_rgba(243,108,33,0.12)]'
+                : 'bg-white/95 sm:bg-[#FDFBF7]/90 backdrop-blur-xl border border-stone-200/90 sm:border-white/80 shadow-[0_8px_26px_rgba(31,36,33,0.10),0_2px_8px_rgba(243,108,33,0.08)]'
             }`}
           >
             {/* Subtle 3D Top Inset Highlight */}
-            <div className="absolute inset-x-6 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-4 sm:inset-x-6 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#F36C21]/60 to-transparent pointer-events-none" />
 
             {/* Brand Wordmark with 3D Emblem */}
-            <div className="shrink-0">
+            <div className="shrink-0 min-w-0 pr-2">
               <Wordmark />
             </div>
 
@@ -231,20 +231,46 @@ export const Navbar: FC = () => {
               </a>
             </div>
 
-            {/* Mobile Hamburger Toggle Button with 3D Pill Feel */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-[#1F2421] bg-white/90 border border-black/10 shadow-[0_2px_8px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:bg-[#F36C21]/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F36C21] transition-all active:scale-95"
-              aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-[#D90429]" />
-              ) : (
-                <Menu className="w-6 h-6 text-[#1F2421]" />
-              )}
-            </button>
+            {/* Mobile Actions: Direct Call Button + WhatsApp + Menu Toggle */}
+            <div className="flex lg:hidden items-center gap-1.5 xs:gap-2 shrink-0">
+              {/* Mobile 1-Tap Quick Call Hotline */}
+              <a
+                href={`tel:${siteConfig.contact.phoneNumber}`}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#FFF6EE] border border-[#F36C21]/35 text-[#4A0E17] font-bold text-xs shadow-xs hover:bg-[#F36C21] hover:text-white active:scale-95 transition-all"
+                title={`Call ${siteConfig.contact.displayPhone}`}
+                aria-label="Call Catering Hotline"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#F36C21]" />
+                <span className="font-mono text-[11px] font-black tracking-tight">Call</span>
+              </a>
+
+              {/* Mobile WhatsApp Quick Action */}
+              <a
+                href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappDefaultMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] hover:text-white border border-[#25D366]/40 shadow-xs active:scale-95 transition-all"
+                title="WhatsApp Us"
+                aria-label="Direct WhatsApp Message"
+              >
+                <MessageCircle className="w-4 h-4 fill-current text-[#25D366]" />
+              </a>
+
+              {/* Mobile Hamburger Toggle Button with Clear 3D Contrast */}
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-1.5 sm:p-2 rounded-xl text-[#1F2421] bg-white border border-stone-300 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F36C21] transition-all active:scale-95"
+                aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#D90429]" />
+                ) : (
+                  <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-[#1F2421]" />
+                )}
+              </button>
+            </div>
           </div>
 
         </div>

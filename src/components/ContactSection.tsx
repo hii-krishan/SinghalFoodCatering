@@ -114,9 +114,6 @@ export const ContactSection: FC = () => {
                     <h3 className="font-serif text-lg sm:text-xl font-bold text-white">
                       Direct Connect Hotlines
                     </h3>
-                    <p className="text-xs text-white/70">
-                      Reach Krishan Singhal & team instantly on either line
-                    </p>
                   </div>
                 </div>
 

@@ -60,25 +60,25 @@ export const Wordmark: FC<WordmarkProps> = ({
       </div>
 
       {/* Brand Typography */}
-      <div className="flex flex-col text-left justify-center select-none">
-        <div className="flex items-center gap-1.5 leading-none">
-          <span className={`font-serif text-[1.35rem] sm:text-[1.55rem] font-black tracking-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] ${
+      <div className="flex flex-col text-left justify-center select-none min-w-0">
+        <div className="flex items-center gap-1 sm:gap-1.5 leading-none">
+          <span className={`font-serif text-[1.25rem] sm:text-[1.55rem] font-black tracking-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] ${
             isDark ? 'text-white drop-shadow-none' : 'text-[#3E0911]'
           }`}>
             Singhal
           </span>
-          <span className="font-sans text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-white px-2 py-0.5 rounded-md bg-gradient-to-r from-[#F36C21] to-[#E65A0B] shadow-[0_2px_6px_rgba(243,108,33,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] border border-[#F36C21]/40">
+          <span className="font-sans text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-white px-1.5 sm:px-2 py-0.5 rounded-md bg-gradient-to-r from-[#F36C21] to-[#E65A0B] shadow-[0_2px_6px_rgba(243,108,33,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] border border-[#F36C21]/40 shrink-0">
             Catering
           </span>
         </div>
-        <span className={`font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.18em] mt-1 ${
-          isDark ? 'text-[#FFB300]/95' : 'text-[#565C58]'
+        <span className={`font-sans text-[9px] sm:text-[11px] font-bold uppercase tracking-wider sm:tracking-[0.18em] mt-0.5 sm:mt-1 truncate ${
+          isDark ? 'text-[#FFB300]/95' : 'text-[#4A0E17]/85 font-extrabold'
         }`}>
           Food & Celebrations • Ganaur
         </span>
 
         {showTagline && (
-          <span className={`text-[11px] font-medium italic mt-0.5 ${
+          <span className={`text-[10px] sm:text-[11px] font-medium italic mt-0.5 ${
             isDark ? 'text-white/70' : 'text-[#565C58]'
           }`}>
             Ganaur & Sonipat, Haryana
