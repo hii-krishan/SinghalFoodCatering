@@ -85,7 +85,7 @@ export const AboutSection: FC = () => {
     <section 
       ref={sectionRef}
       id="about" 
-      className="py-20 lg:py-28 bg-[#FFFDF9] relative border-t border-[#F36C21]/10"
+      className="py-12 sm:py-16 lg:py-20 bg-[#FFFDF9] relative border-t border-[#F36C21]/10"
     >
       
       {/* Decorative Warm Background Shapes */}
@@ -95,7 +95,7 @@ export const AboutSection: FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Editorial Story Layout: 2 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Visual Collage with Live Chaat & Wedding Buffet */}
           <div className="lg:col-span-5 relative space-y-4">
@@ -119,7 +119,7 @@ export const AboutSection: FC = () => {
             </div>
 
             {/* Overlapping Secondary Card with Parallax */}
-            <div className="about-parallax-secondary sm:w-3/4 ml-auto -mt-10 sm:-mt-16 relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[16/9] hidden sm:block">
+            <div className="about-parallax-secondary sm:w-3/4 ml-auto -mt-8 sm:-mt-12 relative z-10 rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[16/9] hidden sm:block">
               <img
                 src="/images/wedding_buffet.jpg"
                 alt="Singhal Food Catering royal banquet presentation"
@@ -129,7 +129,7 @@ export const AboutSection: FC = () => {
             </div>
 
             {/* Regional Badge */}
-            <div className="glass-panel p-4 rounded-2xl border border-[#F36C21]/20 shadow-lg flex items-center gap-3">
+            <div className="glass-panel p-3.5 sm:p-4 rounded-2xl border border-[#F36C21]/20 shadow-md flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#F36C21]/15 text-[#F36C21] flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
@@ -142,14 +142,14 @@ export const AboutSection: FC = () => {
           </div>
 
           {/* Right Column: Brand Philosophy & Story */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
             
             <div className="about-reveal-item inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#4A0E17]/5 border border-[#4A0E17]/10 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#4A0E17]">
               <Sparkles className="w-4 h-4 text-[#F36C21]" />
               <span>About Singhal Food Catering</span>
             </div>
 
-            <h2 className="about-reveal-item font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-[#1F2421] tracking-tight leading-tight">
+            <h2 className="about-reveal-item font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#1F2421] tracking-tight leading-tight">
               Food Prepared with Respect, <br />
               <span className="text-gradient-saffron">Served with Heartfelt Warmth.</span>
             </h2>

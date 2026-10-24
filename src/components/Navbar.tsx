@@ -126,17 +126,18 @@ export const Navbar: FC = () => {
       >
         <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
           
-          {/* Floating High-Contrast Island (Crisp & clearly visible on mobile) */}
+          {/* Floating High-Contrast Solid Island (100% Opaque on All Devices) */}
           <div
             ref={islandRef}
             className={`pointer-events-auto relative rounded-2xl sm:rounded-3xl transition-all duration-300 flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3 ${
               isScrolled
-                ? 'bg-white/98 sm:bg-[#FDFBF7]/92 backdrop-blur-2xl border border-stone-300/85 sm:border-white/90 shadow-[0_14px_38px_rgba(31,36,33,0.16),0_4px_14px_rgba(243,108,33,0.12)]'
-                : 'bg-white/95 sm:bg-[#FDFBF7]/90 backdrop-blur-xl border border-stone-200/90 sm:border-white/80 shadow-[0_8px_26px_rgba(31,36,33,0.10),0_2px_8px_rgba(243,108,33,0.08)]'
+                ? 'bg-white border border-stone-300 shadow-[0_14px_38px_rgba(31,36,33,0.16),0_4px_14px_rgba(243,108,33,0.12)]'
+                : 'bg-white border border-stone-200 shadow-[0_8px_28px_rgba(31,36,33,0.12),0_2px_10px_rgba(243,108,33,0.08)]'
             }`}
+            style={{ backgroundColor: '#FFFFFF', opacity: 1 }}
           >
             {/* Subtle 3D Top Inset Highlight */}
-            <div className="absolute inset-x-4 sm:inset-x-6 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#F36C21]/60 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-4 sm:inset-x-6 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#F36C21] to-transparent pointer-events-none" />
 
             {/* Brand Wordmark with 3D Emblem */}
             <div className="shrink-0 min-w-0 pr-2">
@@ -188,7 +189,7 @@ export const Navbar: FC = () => {
                 href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.whatsappDefaultMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold text-[#128C7E] bg-white/90 hover:bg-[#25D366]/10 border border-[#25D366]/35 shadow-[0_3px_10px_rgba(37,211,102,0.12),inset_0_1px_1px_rgba(255,255,255,0.95)] hover:border-[#25D366] hover:-translate-y-0.5 active:translate-y-0.5 transition-all duration-200"
+                className="hidden xl:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold text-[#128C7E] bg-white hover:bg-[#25D366]/10 border border-[#25D366]/40 shadow-[0_3px_10px_rgba(37,211,102,0.12),inset_0_1px_1px_rgba(255,255,255,0.95)] hover:border-[#25D366] hover:-translate-y-0.5 active:translate-y-0.5 transition-all duration-200"
                 aria-label="Direct WhatsApp Message"
               >
                 <span className="relative flex h-2 w-2">
@@ -200,7 +201,7 @@ export const Navbar: FC = () => {
               </a>
 
               {/* Direct Connect Desktop Pill: Line 1 & Line 2 */}
-              <div className="hidden lg:flex items-center gap-1.5 p-1 rounded-xl bg-white/90 border border-[#F36C21]/20 shadow-[0_3px_10px_rgba(0,0,0,0.04)]">
+              <div className="hidden lg:flex items-center gap-1.5 p-1 rounded-xl bg-white border border-[#F36C21]/25 shadow-[0_3px_10px_rgba(0,0,0,0.06)]">
                 <a
                   href={`tel:${siteConfig.contact.phoneNumber}`}
                   className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-bold text-[#4A0E17] hover:bg-[#FFF6EE] hover:text-[#F36C21] transition-colors"
@@ -276,15 +277,16 @@ export const Navbar: FC = () => {
         </div>
       </header>
 
-      {/* Mobile Drawer Menu with 3D Cards */}
+      {/* Mobile Drawer Menu with 100% Solid Background */}
       {mobileMenuOpen && (
         <div 
-          className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#FDFBF7]/98 backdrop-blur-2xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 lg:hidden flex flex-col bg-[#FFFDF9] animate-in fade-in duration-200"
+          style={{ backgroundColor: '#FFFDF9', opacity: 1 }}
           role="dialog"
           aria-modal="true"
         >
           {/* Mobile Drawer Header */}
-          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-[#F36C21]/15 bg-white/60">
+          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-stone-200 bg-white">
             <Wordmark />
             <button
               type="button"

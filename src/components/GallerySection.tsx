@@ -125,7 +125,7 @@ export const GallerySection: FC = () => {
     <section 
       ref={sectionRef}
       id="gallery" 
-      className="py-20 lg:py-28 bg-[#FDFBF7] relative"
+      className="pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-16 bg-[#FDFBF7] relative"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
