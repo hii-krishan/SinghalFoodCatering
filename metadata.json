@@ -1,0 +1,8 @@
+{
+  "name": "Singhal Food Catering",
+  "description": "Premium catering service offering bespoke wedding feasts, live counters, family functions, and corporate catering across Ganaur and Sonipat, Haryana.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
